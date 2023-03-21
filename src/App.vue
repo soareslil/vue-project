@@ -9,7 +9,7 @@
   </main>
 </template>
 
-<script lang="js">
+<script lang="ts">
 import { defineComponent } from "vue";
 import BarraLateral from "./components/BarraLateral";
 import FormularioBase from "./components/Formulario";
