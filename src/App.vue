@@ -1,16 +1,26 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <OlaMundo />
+  <main class="columns is-gapless is-multiline">
+    <div class="column is-one-quarter">
+      <BarraLateral />
+    </div>
+    <div class="column is-three-quarter">
+      <FormularioBase />
+    </div>
+  </main>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-import OlaMundo from "../src/components/OlaMundo";
+<script lang="js">
+import { defineComponent } from "vue";
+import BarraLateral from "./components/BarraLateral";
+import FormularioBase from "./components/Formulario";
 
 export default defineComponent({
-  name: 'App',
+  name: "App",
   components: {
-    OlaMundo,
+    BarraLateral,
+    FormularioBase
   }
 });
 </script>
+
+<style></style>
