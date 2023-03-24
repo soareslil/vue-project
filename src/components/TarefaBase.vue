@@ -1,24 +1,26 @@
 <template>
-    <div class="box has-text-weight-bold">
+    <BoxBase>
         <div class="columns">
             <div class="column is-7">
-               {{tarefa.descricao}}
+               {{tarefa.descricao || 'Tarefa sem descrição'}}
             </div>
             <div class="column">
                 <CronometroBase :tempoEmSegundos="tarefa.duracaoEmSegundos" />
             </div>
         </div>
-    </div>
+    </BoxBase>
 </template>
 
 <script lang="ts">
 import ITarefa from '@/interface/iTarefa';
 import { defineComponent, PropType } from 'vue';
 import  CronometroBase from './CronometroBase.vue'
+import BoxBase from './BoxBase.vue'
 export default defineComponent({
     name: 'TarefaBase',
     components:{
-        CronometroBase
+        CronometroBase,
+        BoxBase
     },
     props:{
         tarefa:{
@@ -30,8 +32,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.box{
-    background-color: #faf0ca;
-}
+
 </style>
 
