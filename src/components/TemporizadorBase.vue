@@ -19,6 +19,7 @@ import { defineComponent } from "vue";
 import CronometroBase from "./CronometroBase.vue";
 export default defineComponent({
   name: "TemporizadorBase",
+  emits: ['aoTemporizadorFinalizado'],
   components: {
     CronometroBase,
   },
@@ -37,8 +38,10 @@ export default defineComponent({
       }, 1000);
     },
     finalizar() {
-      clearInterval(this.cronometro);
       this.cronometroRodando = false;
+      clearInterval(this.cronometro);
+      this.$emit('aoTemporizadorFinalizado', this.tempoEmSegundos);
+      this.tempoEmSegundos = 0;
     },
   },
 });
