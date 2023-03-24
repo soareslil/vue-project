@@ -11,8 +11,8 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import BarraLateral from "./components/BarraLateral";
-import FormularioBase from "./components/Formulario";
+import BarraLateral from "./components/BarraLateral.vue";
+import FormularioBase from "./components/FormularioBase.vue";
 
 export default defineComponent({
   name: "App",
