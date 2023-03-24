@@ -13,7 +13,9 @@
           v-model="descricao"
         />
       </div>
-      <div class="column"><TemporizadorBase @aoTemporizadorFinalizado="finalizarTarefa" /></div>
+      <div class="column">
+        <TemporizadorBase @aoTemporizadorFinalizado="finalizarTarefa" />
+      </div>
     </div>
   </div>
 </template>
@@ -24,21 +26,24 @@ import TemporizadorBase from "./TemporizadorBase.vue";
 
 export default defineComponent({
   name: "FormularioBase",
+  emits: ["aoSalvarTarefa"],
   components: {
-    TemporizadorBase
+    TemporizadorBase,
   },
-  data(){
-    return{
-      descricao: ''
-    }
+  data() {
+    return {
+      descricao: "",
+    };
   },
   methods: {
-    finalizarTarefa(tempoDecorrido: number): void{
-      console.log('tempo', tempoDecorrido );
-      console.log('tarefa', this.descricao);
-      this.descricao = '';
-    }
-  }
+    finalizarTarefa(tempoDecorrido: number): void {
+      this.$emit("aoSalvarTarefa", {
+        duracaoEmSegundos: tempoDecorrido,
+        descricao: this.descricao,
+      });
+      this.descricao = "";
+    },
+  },
 });
 </script>
 
