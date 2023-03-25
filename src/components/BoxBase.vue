@@ -11,14 +11,9 @@ export default defineComponent({
     data(){
         return{
             estilos: {
-                background: '#faf0ca'
+                backgroundColor: '#faf0ca'
             }
         }
     }
 })
 </script>
-
-
-<style scoped>
-
-</style>
